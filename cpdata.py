@@ -1,7 +1,10 @@
-class Graph(object):
+import rdflib
+
+class Summarizer(object):
 
     def __init__(self, graph_url):
-        pass
+        self.graph = rdflib.Graph()
+        self.graph.parse(graph_url)
 
     def size(self):
-        return 42
+        return len(self.graph)
